@@ -1,13 +1,13 @@
 <?php
 require_once '../../connect.php';
 
-$lastURL = '/furniture/admin/orderManagment/viewAllOrders.php';
+$lastURL = '/amadoFurniture/admin/orderManagment/viewAllOrders.php';
 // setting last url variable in a session so it can be accessed in case i want to redirect to last opened page
 $_SESSION['lastURL'] = $lastURL;
 
 // if not logged in goto login page
 if (!isset($_SESSION['userDetails']['0']['name']) || $_SESSION['userDetails']['0']['user_type'] !== '0') {
-    header('location: /furniture/login.php');
+    header('location: /amadoFurniture/login.php');
 }
 
 // if logged in
@@ -56,7 +56,7 @@ include_once '../../includes/amado/searchBar.php';
         <div class="catagories-menu">
           <ul>
             <li>
-              <a href="/furniture/admin/adminDashboard.php">Account Details</a>
+              <a href="/amadoFurniture/admin/adminDashboard.php">Account Details</a>
             </li>
             <li>
               <a href="../productManagment/addProduct.php">Add Products</a>

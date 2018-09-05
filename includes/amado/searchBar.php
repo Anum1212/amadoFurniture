@@ -12,7 +12,7 @@ if (isset($_GET['searchItem'])) {
     $_SESSION['searchWord'] = $searchWord;
     $_SESSION['searchWord_soundexArray'] = $searchWord;
 
-    header('location: /furniture/productSearchResult.php');
+    header('location: /amadoFurniture/productSearchResult.php');
   } ?>
 
     <!-- Search Wrapper Area Start -->
@@ -26,7 +26,7 @@ if (isset($_GET['searchItem'])) {
                     <div class="search-content">
                         <form action="" method="GET">
                             <input type="search" name="search" id="search" placeholder="Type your keyword..." required>
-                            <button type="submit" name="searchItem"><img src="/furniture/myAssets/amado/img/core-img/search.png" alt=""></button>
+                            <button type="submit" name="searchItem"><img src="/amadoFurniture/myAssets/amado/img/core-img/search.png" alt=""></button>
                         </form>
                     </div>
                 </div>

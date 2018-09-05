@@ -2,7 +2,7 @@
 require_once '../../connect.php';
 // if not logged in goto login page
 if (!isset($_SESSION['userDetails']['0']['name']) || $_SESSION['userDetails']['0']['user_type'] != '0') {
-    header('location: /furniture/login.php');
+    header('location: /amadoFurniture/login.php');
 }
 
 // if logged in
@@ -56,7 +56,7 @@ include_once '../../includes/amado/searchBar.php';
         <div class="catagories-menu">
           <ul>
             <li>
-              <a href="/furniture/admin/adminDashboard.php">Account Details</a>
+              <a href="/amadoFurniture/admin/adminDashboard.php">Account Details</a>
             </li>
             <li>
               <a href="../productManagment/addProduct.php">Add Products</a>

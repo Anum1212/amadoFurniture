@@ -11,7 +11,7 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="/furniture/myAssets/amado/css/core-style.css">
+    <link rel="stylesheet" href="/amadoFurniture/myAssets/amado/css/core-style.css">
 
     <!-- FontAwesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">

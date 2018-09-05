@@ -2,13 +2,13 @@
 
 require_once '../connect.php';
 
-$lastURL = '/furniture/customer/customerDashboard.php';
+$lastURL = '/amadoFurniture/customer/customerDashboard.php';
 // setting last url variable in a session so it can be accessed in case i want to redirect to last opened page
 $_SESSION['lastURL'] = $lastURL;
 
 // if not logged in goto login page
 if (!isset($_SESSION['userDetails']['0']['name'])) {
-    header('location: /furniture/login.php');
+    header('location: /amadoFurniture/login.php');
 }
 
 // if logged in
