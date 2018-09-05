@@ -1,0 +1,23 @@
+*{
+  overflow-x: hidden;
+}
+
+.nice-select{
+  overflow-x: visible !important;
+  float: none !important;
+}
+
+@media (min-width: 768px) {
+  #sideBar{
+    min-height: 98vh;
+  }
+}
+
+@media (max-width: 769px) {
+  #sideBar{
+    max-height: 5vh;
+  }
+  .catagory{
+    margin-top: -60px
+  }
+}
