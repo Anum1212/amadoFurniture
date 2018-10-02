@@ -36,7 +36,8 @@
 }
 ?>><a href="/amadoFurniture/dashboardRedirector.php">Account</a></li>
                     <!-- show cart nav item if user type is customer -->
-                    <?php if (isset($_SESSION['userDetails']['0']['user_type' == '1'])) {?>
+                    <?php if (isset($_SESSION['userDetails']['0']['user_type'])) 
+                    if($_SESSION['userDetails']['0']['user_type'] == '1'){?>
                         <li <?php if (isset($pageIndicator) && strpos($pageIndicator, 'cart') !== false) {
     echo 'class="active"';
 }

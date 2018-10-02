@@ -162,5 +162,3 @@ include_once 'includes/amado/scripts.php';
 ?>
 
 </body>
-
-</php?category_id=>
