@@ -24,7 +24,7 @@ if (isset($_SESSION['userDetails']['0']['name'], $_GET['order_id'])) {
           // check if order belongs to the customer
             if ($order['customer_id'] == $customer_id) {
               // if the order belongs to the customer get order item details from order_items table
-                $OrderItemQuery = "SELECT * FROM order_items WHERE order_id = $customer_id";
+                $OrderItemQuery = "SELECT * FROM order_items WHERE order_id = $order_id";
                 $OrderItemQueryResult = mysqli_query($dbConnect, $OrderItemQuery);
             }
 // else redirect to customerOrders.php
