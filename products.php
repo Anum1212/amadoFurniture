@@ -106,12 +106,14 @@ $productImageQuery = "SELECT * FROM product_images WHERE product_id = $product[i
                   if (mysqli_num_rows($productImageQueryResult)>0) {
                       while ($productImage = $productImageQueryResult->fetch_assoc()) {
                           ?>
-                <img style="height:460px" src="myAssets/images/productImages/<?php if ($productImage['image_number'] == '0') {
-                              echo $productImage['image_name'];
-                          } ?>" alt="">
-        <img class="hover-img" style="height:460px" src="myAssets/images/productImages/<?php if ($productImage['image_number'] == '1') {
-                              echo $productImage['image_name'];
-                          } ?>" alt="">
+                          <?php
+if ($productImage['image_number'] == '0') { ?>
+                <img style="height:460px" src="myAssets/images/productImages/<?php echo $productImage['image_name'];?>">
+                <?php } ?>
+                <?php
+if ($productImage['image_number'] == '1') { ?>
+        <img class="hover-img" style="height:460px" src="myAssets/images/productImages/<?php echo $productImage['image_name'];?>">
+                <?php } ?>
         <?php
                       }
                   } ?>

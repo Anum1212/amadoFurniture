@@ -33,12 +33,12 @@ if (isset($_POST['login_user'])) {
                 $_SESSION['userDetails'] = $userDetails;
             }
             if ($_SESSION['userDetails']['0']['user_type'] == '0') {
-                header('location: /amadoFurniture/admin/adminDashboard.php');
+                header('location: /admin/adminDashboard.php');
             } else
             if (isset($_SESSION['lastURL'])) {
                 header('location:' . $_SESSION['lastURL']);
             } else {
-                header('location: /amadoFurniture/customer/customerDashboard.php');
+                header('location: /customer/customerDashboard.php');
             }
 
         } else {

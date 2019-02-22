@@ -2,24 +2,24 @@
 
 require_once 'connect.php';
 
-$lastURL = '/amadoFurniture/dashboardRedirector.php';
+$lastURL = '/dashboardRedirector.php';
 // setting last url variable in a session so it can be accessed in case i want to redirect to last opened page
 $_SESSION['lastURL'] = $lastURL;
 
 // if not logged in goto login page
 if (!isset($_SESSION['userDetails']['0']['name'])) {
-    header('location: /amadoFurniture/login.php');
+    header('location: /login.php');
 }
 
 // if logged in
 if (isset($_SESSION['userDetails']['0']['name'])){
     // if user type 0 -> admin
     if ($_SESSION['userDetails']['0']['user_type'] == '0'){
-        header('location: /amadoFurniture/admin/adminDashboard.php');
+        header('location: /admin/adminDashboard.php');
     }
     // if user type 1 -> customer
 if ($_SESSION['userDetails']['0']['user_type'] == '1'){
-header('location: /amadoFurniture/customer/customerDashboard.php');
+header('location: /customer/customerDashboard.php');
 }
 }
 

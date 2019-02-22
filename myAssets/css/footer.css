@@ -1,0 +1,23 @@
+footer {
+    text-align: center;
+    background-color: #24292E;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+footer .project-state {
+    color: #DC3545
+}
+
+footer .my-email {
+    color: rgb(59, 154, 255)
+}
+
+footer .my-project-code {
+    color: rgb(47, 206, 84)
+}
+
+footer .my-other-projects {
+    color: rgb(243, 199, 69)
+}
