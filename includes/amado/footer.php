@@ -3,8 +3,6 @@
   <!-- ---------------------------------------------------------------- -->
   <footer>
     <div class="container">
-      <b>Project Status:<span class="project-state"> Under development [Add menu page]</span></b>
-      <br>
       <b> get in touch</b>
       <br>
       <a href="mailto:anamamer0@gmail.com" class="my-email">Anum Amir(anamamer0@gmail.com)</a>
