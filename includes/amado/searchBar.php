@@ -12,7 +12,7 @@ if (isset($_GET['searchItem'])) {
     $_SESSION['searchWord'] = $searchWord;
     $_SESSION['searchWord_soundexArray'] = $searchWord;
 
-    header('location: /productSearchResult.php');
+    header('location: productSearchResult.php');
   } ?>
 
     <!-- Search Wrapper Area Start -->
