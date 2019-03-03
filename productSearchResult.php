@@ -115,20 +115,31 @@ include_once 'includes/amado/sideNavBar.php';
               <!-- Product Image -->
               <div class="product-img">
               <?php
-$productImageQuery = "SELECT * FROM product_images WHERE product_id = $product[id]";
-                  $productImageQueryResult = mysqli_query($dbConnect, $productImageQuery);
-                  if (mysqli_num_rows($productImageQueryResult)>0) {
-                      while ($productImage = $productImageQueryResult->fetch_assoc()) {
+$productImage1Query = "SELECT * FROM product_images WHERE product_id = $product[id] AND image_number = 0";
+                  $productImage1QueryResult = mysqli_query($dbConnect, $productImage1Query);
+                  if (mysqli_num_rows($productImage1QueryResult)>0) {
+                      while ($productImage1 = $productImage1QueryResult->fetch_assoc()) {
                           ?>
-                <img style="height:460px" src="myAssets/images/productImages/<?php if ($productImage['image_number'] == '0') {
-                              echo $productImage['image_name'];
-                          } ?>" alt="">
-        <img class="hover-img" style="height:460px" src="myAssets/images/productImages/<?php if ($productImage['image_number'] == '1') {
-                              echo $productImage['image_name'];
-                          } ?>" alt="">
-        <?php
-                      }
-                  } ?>
+                          <?php
+if ($productImage1['image_number'] == '0') { ?>
+                <img style="height:460px" src="myAssets/images/productImages/<?php echo $productImage1['image_name'];?>">
+                <?php } 
+              }
+            }
+              ?>
+              <?php
+$productImage2Query = "SELECT * FROM product_images WHERE product_id = $product[id] AND image_number = 0";
+                  $productImage2QueryResult = mysqli_query($dbConnect, $productImage2Query);
+                  if (mysqli_num_rows($productImage2QueryResult)>0) {
+                      while ($productImage2 = $productImage2QueryResult->fetch_assoc()) {
+                          ?>
+                <?php
+if ($productImage2['image_number'] == '1') { ?>
+        <img class="hover-img" style="height:460px" src="myAssets/images/productImages/<?php echo $productImage2['image_name'];?>">
+                <?php } 
+                }
+              }
+                ?>
               </div>
               <!-- Product Description -->
               <div class="product-description d-flex align-items-center justify-content-between">
