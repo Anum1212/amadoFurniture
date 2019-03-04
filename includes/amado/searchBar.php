@@ -26,7 +26,7 @@ if (isset($_GET['searchItem'])) {
                     <div class="search-content">
                         <form action="" method="GET">
                             <input type="search" name="search" id="search" placeholder="Type your keyword..." required>
-                            <button type="submit" name="searchItem"><img src="myAssets/amado/img/core-img/search.png" alt=""></button>
+                            <button type="submit" name="searchItem"><img src="<?php echo $_SESSION['pathLevel'] ?>myAssets/amado/img/core-img/search.png" alt=""></button>
                         </form>
                     </div>
                 </div>

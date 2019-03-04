@@ -1,6 +1,10 @@
 <?php
 require_once 'connect.php';
 
+// path level to help me adjust asset paths 
+$_SESSION['pathLevel'] = '';
+
+
 if (isset($_GET['product_id'])) {
 $product_id = $_GET['product_id'];
 

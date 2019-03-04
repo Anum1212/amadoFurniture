@@ -1,6 +1,8 @@
 <?php
 require_once 'connect.php';
 
+// path level to help me adjust asset paths 
+$_SESSION['pathLevel'] = '';
 
 $lastURL = 'invoice.php';
 // setting last url variable in a session so it can be accessed in case i want to redirect to last opened page

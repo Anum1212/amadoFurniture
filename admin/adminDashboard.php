@@ -2,14 +2,12 @@
 
 require_once '../connect.php';
 
-$lastURL = '/amadoFurniture/admin/adminDashboard.php';
-// setting last url variable in a session so it can be accessed in case i want to redirect to last opened page
-$_SESSION['lastURL'] = $lastURL;
+// path level to help me adjust asset paths 
+$_SESSION['pathLevel'] = '../';
 
 // if not logged in goto login page
 if (!isset($_SESSION['userDetails']['0']['name']) || $_SESSION['userDetails']['0']['user_type'] != '0') {
-    // echo 'not admin';
-    header('location: /amadoFurniture/login.php');
+    header("location: $_SESSION[pathLevel]login.php");
 }
 
 // if logged in
@@ -95,21 +93,21 @@ $pageIndicator = 'account';
 <head>
 
 <?php
-include '../includes/amado/head.php';
+include "$_SESSION[pathLevel]includes/amado/head.php";
 ?>
-<link rel="stylesheet" href="../myAssets/css/dashboard.css">
+<link rel="stylesheet" href="<?php echo $_SESSION['pathLevel'] ?>myAssets/css/dashboard.css">
 </head>
 
 <body>
 
     <?php
-include_once '../includes/amado/searchBar.php';
+include_once "$_SESSION[pathLevel]includes/amado/searchBar.php";
 ?>
 
 <div class="main-content-wrapper d-flex clearfix row">
   <div class="col-12 col-md-2">
     <?php
-    include_once '../includes/amado/sideNavBar.php';
+    include_once "$_SESSION[pathLevel]includes/amado/sideNavBar.php";
     ?>
   </div>
 
@@ -142,8 +140,8 @@ include_once '../includes/amado/searchBar.php';
   <div class="container col-12 col-md-8">
 
 <?php
-include_once '../includes/errors.php';
-include_once '../includes/messages.php';
+include_once "$_SESSION[pathLevel]includes/errors.php";
+include_once "$_SESSION[pathLevel]includes/messages.php";
 ?>
 
                     <div class="checkout_details_area mt-50 ml-4">
@@ -190,11 +188,11 @@ include_once '../includes/messages.php';
 </div>
 
     <?php
-    include_once '../includes/amado/footer.php';
+    include_once "$_SESSION[pathLevel]includes/amado/footer.php";
     ?>
 
 <?php
-include_once '../includes/amado/scripts.php';
+include_once "$_SESSION[pathLevel]includes/amado/scripts.php";
 ?>
 
 <script>

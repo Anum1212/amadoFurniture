@@ -18,7 +18,7 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="index.php"><img src="myAssets/amado/img/core-img/logo.png" alt=""></a>
+                <a href="<?php echo $_SESSION['pathLevel'] ?>index.php"><img src="<?php echo $_SESSION['pathLevel'] ?>myAssets/amado/img/core-img/logo.png" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
@@ -26,7 +26,7 @@
                     <li <?php if (isset($pageIndicator) && strpos($pageIndicator, 'index') !== false) {
     echo 'class="active"';
 }
-?>><a href="/index.php">Home</a></li>
+?>><a href="<?php echo $_SESSION['pathLevel'] ?>index.php">Home</a></li>
                     <li <?php if (isset($pageIndicator) && strpos($pageIndicator, 'search') !== false) {
     echo 'class="active"';
 }
@@ -34,23 +34,23 @@
                     <li <?php if (isset($pageIndicator) && strpos($pageIndicator, 'account') !== false) {
     echo 'class="active"';
 }
-?>><a href="/dashboardRedirector.php">Account</a></li>
+?>><a href="<?php echo $_SESSION['pathLevel'] ?>dashboardRedirector.php">Account</a></li>
                     <!-- show cart nav item if user type is customer -->
                     <?php if (isset($_SESSION['userDetails']['0']['user_type'])) 
                     if($_SESSION['userDetails']['0']['user_type'] == '1'){?>
                         <li <?php if (isset($pageIndicator) && strpos($pageIndicator, 'cart') !== false) {
     echo 'class="active"';
 }
-    ?>><a href="/cart.php">Cart</a></li> <?php }?>
+    ?>><a href="<?php echo $_SESSION['pathLevel'] ?>cart.php">Cart</a></li> <?php }?>
                         <!-- show logout nav item if user is logged in -->
                     <?php if (isset($_SESSION['userDetails']['0']['name'])) {
     if (isset($_GET['logout'])) {
         session_unset();
         session_destroy();
-        header("location: /index.php");
+        header("location:  $_SESSION[pathLevel]index.php");
     }
     ?>
-                        <li> <a href="/index.php?logout='1'" style="color: red;">logout</a> </li>
+                        <li> <a href="<?php echo $_SESSION['pathLevel'] ?>index.php?logout='1'" style="color: red;">logout</a> </li>
                     <?php }?>
                 </ul>
             </nav>

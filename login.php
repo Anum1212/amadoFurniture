@@ -1,6 +1,10 @@
 <?php
 require_once 'connect.php';
 
+// path level to help me adjust asset paths 
+$_SESSION['pathLevel'] = '';
+
+
 // initializing variables
 $email = "";
 $errors = array();
@@ -33,12 +37,12 @@ if (isset($_POST['login_user'])) {
                 $_SESSION['userDetails'] = $userDetails;
             }
             if ($_SESSION['userDetails']['0']['user_type'] == '0') {
-                header('location: /admin/adminDashboard.php');
+                header('location: admin/adminDashboard.php');
             } else
             if (isset($_SESSION['lastURL'])) {
                 header('location:' . $_SESSION['lastURL']);
             } else {
-                header('location: /customer/customerDashboard.php');
+                header('location: customer/customerDashboard.php');
             }
 
         } else {
@@ -90,7 +94,7 @@ include_once 'includes/messages.php';
                                 <h2>Sign In</h2>
                             </div>
 
-                            <form action="#" method="post">
+                            <form action="login.php" method="post">
                                 <div class="row">
                                     <div class="col-12 mb-3">
                                         <input type="email" name="email" class="form-control" id="email" placeholder="Email" value="">

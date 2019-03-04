@@ -1,6 +1,9 @@
 <?php
 require_once 'connect.php';
 
+// path level to help me adjust asset paths 
+$_SESSION['pathLevel'] = '';
+
 if (isset($_GET['category_id'])) {
     $categoryQuery = "SELECT * FROM categories";
     $categoryQueryResult = mysqli_query($dbConnect, $categoryQuery);

@@ -1,6 +1,12 @@
 <?php
 require_once 'connect.php';
 
+// pageIndicator var used to indicate which page the user is on so that that navbar link can be given active class
+$pageIndicator = 'search';
+
+// path level to help me adjust asset paths 
+$_SESSION['pathLevel'] = '';
+
 $errors = array();
 
 if (isset($_SESSION['searchWord'])) {
@@ -30,8 +36,6 @@ if (isset($_SESSION['searchWord'])) {
     $_SESSION['lastURL'] = $lastURL;
 }
 
-// pageIndicator var used to indicate which page the user is on so that that navbar link can be given active class
-$pageIndicator = 'search';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -2,6 +2,12 @@
 
 require_once 'connect.php';
 
+// pageIndicator var used to indicate which page the user is on so that that navbar link can be given active class
+$pageIndicator = 'cart';
+
+// path level to help me adjust asset paths 
+$_SESSION['pathLevel'] = '';
+
 $lastURL = 'cart.php';
 // setting last url variable in a session so it can be accessed in case i want to redirect to last opened page
 $_SESSION['lastURL'] = $lastURL;
@@ -17,9 +23,6 @@ if (isset($_SESSION['userDetails']['0']['name'])) {
     $cartQuery = "SELECT * FROM cart WHERE customer_id = $customer_id";
     $cartQueryResult = mysqli_query($dbConnect, $cartQuery);
 }
-
-// pageIndicator var used to indicate which page the user is on so that that navbar link can be given active class
-$pageIndicator = 'cart';
 ?>
 
 <!DOCTYPE html>
